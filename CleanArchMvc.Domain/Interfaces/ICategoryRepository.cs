@@ -1,0 +1,16 @@
+﻿using CleanArchMvc.Domain.Entities;
+
+namespace CleanArchMvc.Domain.Interfaces;
+
+public interface ICategoryRepository
+{
+    Task<ICollection<Category>> GetCategoriesAsync();
+
+    Task<Category> GetByIdAsync(int id);
+
+    Task<Category> CreateAsync(Category category);
+
+    Task<Category> UpdateAsync(Category category);
+
+    Task<Category> DeleteAsync(Category category);
+}
