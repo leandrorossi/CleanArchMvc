@@ -1,4 +1,6 @@
-﻿using CleanArchMvc.Domain.Interfaces;
+﻿using CleanArchMvc.Application.Interfaces;
+using CleanArchMvc.Application.Services;
+using CleanArchMvc.Domain.Interfaces;
 using CleanArchMvc.Infra.Data.Context;
 using CleanArchMvc.Infra.Data.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -18,6 +20,9 @@ public static class DependencyInjection
 
         services.AddScoped<ICategoryRepository, CategoryRepository>();
         services.AddScoped<IProductRepository, ProductRepository>();
+
+        services.AddScoped<ICategoryService, CategoryService>();
+        services.AddScoped<IProductService, ProductService>();
 
         return services;
     }
