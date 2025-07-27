@@ -16,7 +16,7 @@ public class ProductRepository(ApplicationDbContext context) : IProductRepositor
         return product;
     }
 
-    public async Task<Product> GetByIdAsync(int id)
+    public async Task<Product> GetByIdAsync(int? id)
     {
         return await _context.Product.FindAsync(id);
     }

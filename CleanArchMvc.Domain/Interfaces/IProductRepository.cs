@@ -6,7 +6,7 @@ public interface IProductRepository
 {
     Task<ICollection<Product>> GetProductsAsync();
 
-    Task<Product> GetByIdAsync(int id);
+    Task<Product> GetByIdAsync(int? id);
 
     Task<Product> GetProductCategoryAsync(int id);
 

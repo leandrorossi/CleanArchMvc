@@ -9,7 +9,7 @@ public class CategoryService(ICategoryRepository categoryRepository) : ICategory
 {
     private readonly ICategoryRepository _categoryRepository = categoryRepository;
 
-    public async Task<CategoryDTO> GetByIdAsync(int id)
+    public async Task<CategoryDTO> GetByIdAsync(int? id)
     {
         var categoryEntity = await _categoryRepository.GetByIdAsync(id);
         return categoryEntity.ToDto();

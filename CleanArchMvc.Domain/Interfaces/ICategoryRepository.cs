@@ -6,7 +6,7 @@ public interface ICategoryRepository
 {
     Task<ICollection<Category>> GetCategoriesAsync();
 
-    Task<Category> GetByIdAsync(int id);
+    Task<Category> GetByIdAsync(int? id);
 
     Task<Category> CreateAsync(Category category);
 

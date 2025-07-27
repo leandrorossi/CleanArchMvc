@@ -9,7 +9,7 @@ public class ProductService(IProductRepository productRepository) : IProductServ
 {
     private readonly IProductRepository _productRepository = productRepository;
 
-    public async Task<ProductDTO> GetByIdAsync(int id)
+    public async Task<ProductDTO> GetByIdAsync(int? id)
     {
         var productEntity = await _productRepository.GetByIdAsync(id);
         return productEntity.ToDTO();
