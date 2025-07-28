@@ -1,9 +1,11 @@
 ﻿using CleanArchMvc.Domain.Entities;
+using CleanArchMvc.Infra.Data.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace CleanArchMvc.Infra.Data.Context;
 
-public class ApplicationDbContext(DbContextOptions options) : DbContext(options)
+public class ApplicationDbContext(DbContextOptions options) : IdentityDbContext<ApplicationUser>(options)
 {
     public DbSet<Category> Category { get; set; }
 
